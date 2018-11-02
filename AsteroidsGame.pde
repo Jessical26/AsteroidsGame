@@ -26,6 +26,8 @@ public void keyPressed()
       bob.setX((int)(Math.random()*500));
       bob.setY((int)(Math.random()*500));
       bob.setPointDirection((int)(Math.random()*360));
+      bob.setDirectionX(0);
+      bob.setDirectionY(0);
     }
   }
 
@@ -34,5 +36,6 @@ public void draw()
   //your code here
   background(255,255,255);
   bob.show();
+  bob.move();
 
 }
