@@ -1,10 +1,17 @@
 //your variable declarations here
 Spaceship bob;
+Star [] nightSky;
 public void setup() 
 {
   //your code here
   size(500,500);
   bob = new Spaceship();
+  nightSky = new Star[200];
+  for(int i = 0; i < nightSky.length; i++)
+  {
+     nightSky[i] = new Star();
+  }
+  
 }
 
 public void keyPressed()
@@ -34,8 +41,12 @@ public void keyPressed()
 public void draw() 
 {
   //your code here
-  background(255,255,255);
+  background(0);
   bob.show();
   bob.move();
+  for(int i = 0; i < nightSky.length; i++)
+  {
+    nightSky[i].show();
+  }
 
 }
