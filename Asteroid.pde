@@ -21,11 +21,14 @@ class Asteroid extends Floater
     myRotationSpeed = 5; 
     
     corners = 6;
-    int[] xS = {};
-    int[] yS = {};
+    int[] xS = {-8,-5,0,6,-8,-10};
+    int[] yS = {2,4,8,9,10,12};
     xCorners = xS;
     yCorners = yS;
     myColor = color(80,80,80);
+    
+    myCenterX = 250;
+    myCenterY = 250;
   }
   
   public void move()
