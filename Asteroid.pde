@@ -11,5 +11,26 @@ class Asteroid extends Floater
   public double getDirectionY(){return myDirectionY;}
   public void setPointDirection(int degrees){myPointDirection = degrees;}
   public double getPointDirection(){return myPointDirection;}
+  
+  private int myRotationSpeed;
+  public Asteroid()
+  {
+    if(Math.random() <= 0.5)
+    myRotationSpeed = -5;
+    else
+    myRotationSpeed = 5; 
+    
+    corners = 6;
+    int[] xS = {};
+    int[] yS = {};
+    xCorners = xS;
+    yCorners = yS;
+    myColor = color(80,80,80);
+  }
+  
+  public void move()
+  {  
+     turn(myRotationSpeed);
+  }
 
 }
