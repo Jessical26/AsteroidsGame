@@ -21,19 +21,21 @@ class Asteroid extends Floater
     myRotationSpeed = 5; 
     
     corners = 6;
-    int[] xS = {-8,-5,0,6,-8,-10};
-    int[] yS = {2,4,8,9,10,12};
+    int[] xS = {8,-5,7 ,6,-8,-10};
+    int[] yS = {2,-4,8,-9,10,-12};
     xCorners = xS;
     yCorners = yS;
     myColor = color(80,80,80);
     
-    myCenterX = 250;
-    myCenterY = 250;
+    myCenterX = (int)(Math.random()*500);
+    myCenterY = (int)(Math.random()*500);
+
   }
   
   public void move()
   {  
      turn(myRotationSpeed);
+      
   }
 
 }
