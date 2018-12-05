@@ -1,7 +1,8 @@
 //your variable declarations here
 Spaceship ship;
 Star [] nightSky;
-Asteroid [] asteroids;
+ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
+
 public void setup() 
 {
   //your code here
@@ -12,12 +13,11 @@ public void setup()
   {
      nightSky[i] = new Star();
   }
-  asteroids = new Asteroid[10];
-  for(int i = 0; i < asteroids.length;i++)
-  {
-    asteroids[i] = new Asteroid();
-  }
   
+  for(int nI = 0; nI < 10;nI++)
+  {
+    asteroids.add(new Asteroid());
+  }
 }
 
 public void keyPressed()
@@ -54,9 +54,17 @@ public void draw()
   {
     nightSky[i].show();
   }
-  for(int i = 0; i < asteroids.length; i++)
+  for(int nI = 0; nI < asteroids.size(); nI++)
   {
-    asteroids[i].show();
-    asteroids[i].move();
+    asteroids.get(nI).show();
+    asteroids.get(nI).move();
+  }
+  for (int i = 0; i < asteroids.size(); i++)
+  {
+    asteroids.get(i).move();
+    asteroids.get(i).show();
+    float d = dist(ship.getX(), ship.getY(), asteroids.get(i).getX(), asteroids.get(i).getY());
+    if (d < 10)
+      asteroids.remove(i);
   }
 }
